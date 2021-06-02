@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { showChildren } from '../../api/child'
 import Card from 'react-bootstrap/Card'
-// import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 class ShowChildren extends Component {
   constructor () {
@@ -44,16 +45,19 @@ class ShowChildren extends Component {
       )
     } else {
       childrenJsx = (
-        <div>
+        <div className="show-children">
           {this.state.children.map(child => (
             <div key={child.id}>
-              <div className="mx-auto mt-5">
-                <Card>
+              <div className="mt-5">
+                <Card style={{ width: '18rem' }}>
                   <Card.Body>
                     <Card.Title>{child.name}</Card.Title>
                     <Card.Text>
                       {child.age} years old.
                     </Card.Text>
+                    <Button size="sm">Edit</Button>
+                    <Button size="sm">Delete</Button>
+                    { child.milestones.length > 0 ? <Button size="sm">View milestones</Button> : ''}
                   </Card.Body>
                 </Card>
               </div>
@@ -65,7 +69,10 @@ class ShowChildren extends Component {
 
     return (
       <Fragment>
-        <h5>Children</h5>
+        <Jumbotron>
+          <h1>Watch them grow!</h1>
+          <p>Keep all of your children up to date. If you&apos;ve got a new member of the family, add them by clicking the button below!</p>
+        </Jumbotron>
         {childrenJsx}
       </Fragment>
     )
