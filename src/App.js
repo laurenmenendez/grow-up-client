@@ -17,7 +17,8 @@ class App extends Component {
       user: null,
       msgAlerts: [],
       signUpModal: true,
-      signInModal: true
+      signInModal: true,
+      changePasswordModal: true
     }
   }
 
@@ -54,6 +55,14 @@ class App extends Component {
     this.setState({ signInModal: false })
   }
 
+  onChangePasswordModalShow = () => {
+    this.setState({ changePasswordModal: true })
+  }
+
+  onChangePasswordModalClose = () => {
+    this.setState({ changePasswordModal: false })
+  }
+
   render () {
     const { msgAlerts, user } = this.state
 
@@ -80,8 +89,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
+            <ChangePassword msgAlert={this.msgAlert} user={user} onChangePasswordModalShow={this.onChangePasswordModalShow} onChangePasswordModalClose={this.onChangePasswordModalClose} changePasswordModal={this.state.changePasswordModal}/>
           )} />
         </main>
       </Fragment>
