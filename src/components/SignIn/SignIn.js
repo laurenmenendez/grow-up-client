@@ -34,7 +34,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/children'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
