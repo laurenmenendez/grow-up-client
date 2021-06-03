@@ -49,7 +49,7 @@ class UpdateChild extends Component {
           message: messages.updateChildSuccess,
           variant: 'success'
         }))
-      .then(() => history.push('/children'))
+      .then(() => history.push(`/children/${id}/show-child`))
       .catch(error => {
         this.setState({ name: '', age: '' })
         msgAlert({
@@ -73,7 +73,7 @@ class UpdateChild extends Component {
                 <h4>Enter only the information you&apos;d like to update on this child</h4>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="title">
-                    <Form.Label>Title</Form.Label>
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
                       type="text"
                       name="name"
@@ -83,7 +83,7 @@ class UpdateChild extends Component {
                     />
                   </Form.Group>
                   <Form.Group controlId="age">
-                    <Form.Label>Body</Form.Label>
+                    <Form.Label>Age</Form.Label>
                     <Form.Control
                       name="age"
                       value={age}

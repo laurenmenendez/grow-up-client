@@ -13,5 +13,9 @@ export default {
   updateChildSuccess: 'Child updated successfully.',
   updateChildFailure: 'Failed to update child.',
   deleteChildSuccess: 'Child deleted successfully.',
-  deleteChildFailure: 'Failed to delete child.'
+  deleteChildFailure: 'Failed to delete child.',
+  showChildSuccess: 'Child shown successfully.',
+  showChildFailure: 'Failed to show child.',
+  showMilestonesSuccess: 'All milestones shown successfully.',
+  showMilestonesFailure: 'Failed to show all milestones.'
 }

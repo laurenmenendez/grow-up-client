@@ -13,6 +13,7 @@ import ShowChildren from './components/ShowChildren/ShowChildren'
 import CreateChild from './components/CreateChild/CreateChild'
 import UpdateChild from './components/UpdateChild/UpdateChild'
 import DeleteChild from './components/DeleteChild/DeleteChild'
+import ShowChild from './components/ShowChild/ShowChild'
 
 class App extends Component {
   constructor (props) {
@@ -125,6 +126,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/delete-child' render={() => (
             <DeleteChild msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/children/:id/show-child' render={() => (
+            <ShowChild msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
