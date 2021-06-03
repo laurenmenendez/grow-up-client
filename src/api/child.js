@@ -26,3 +26,26 @@ export const createChild = (childData, user) => {
     }
   })
 }
+
+export const updateChild = (childData, user, id) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + `/children/${id}/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      child: childData
+    }
+  })
+}
+
+export const showChild = (user, id) => {
+  return axios({
+    url: apiUrl + `/children/${id}/`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}

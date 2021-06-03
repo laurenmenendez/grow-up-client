@@ -11,6 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import ShowChildren from './components/ShowChildren/ShowChildren'
 import CreateChild from './components/CreateChild/CreateChild'
+import UpdateChild from './components/UpdateChild/UpdateChild'
 
 class App extends Component {
   constructor (props) {
@@ -21,7 +22,8 @@ class App extends Component {
       signUpModal: true,
       signInModal: true,
       changePasswordModal: true,
-      createChildModal: true
+      createChildModal: true,
+      updateChildModal: true
     }
   }
 
@@ -74,6 +76,14 @@ class App extends Component {
     this.setState({ createChildModal: false })
   }
 
+  onUpdateChildModalShow = () => {
+    this.setState({ updateChildModal: true })
+  }
+
+  onUpdateChildModalClose = () => {
+    this.setState({ updateChildModal: false })
+  }
+
   render () {
     const { msgAlerts, user } = this.state
 
@@ -108,6 +118,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/create-child' render={() => (
             <CreateChild msgAlert={this.msgAlert} user={user} onCreateChildModalShow={this.onCreateChildModalShow} onCreateChildModalClose={this.onCreateChildModalClose} createChildModal={this.state.createChildModal}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/children/:id/update-child' render={() => (
+            <UpdateChild msgAlert={this.msgAlert} user={user} onUpdateChildModalShow={this.onUpdateChildModalShow} onUpdateChildModalClose={this.onUpdateChildModalClose} updateChildModal={this.state.updateChildModal}/>
           )} />
         </main>
       </Fragment>
