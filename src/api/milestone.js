@@ -1,12 +1,35 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const showMilestones = (user, id) => {
+export const showMilestones = (user, childId) => {
   return axios({
-    url: apiUrl + `/children/${id}/milestones/`,
+    url: apiUrl + `/children/${childId}/milestones/`,
     method: 'GET',
     headers: {
       'Authorization': `Token ${user.token}`
+    }
+  })
+}
+
+export const showMilestone = (user, childId, id) => {
+  return axios({
+    url: apiUrl + `/children/${childId}/milestones/${id}/`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
+
+export const updateMilestone = (milestoneData, user, childId, id) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + `/children/${childId}/milestones/${id}/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      milestone: milestoneData
     }
   })
 }

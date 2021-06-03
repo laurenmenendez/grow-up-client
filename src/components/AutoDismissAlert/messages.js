@@ -17,5 +17,7 @@ export default {
   showChildSuccess: 'Child shown successfully.',
   showChildFailure: 'Failed to show child.',
   showMilestonesSuccess: 'All milestones shown successfully.',
-  showMilestonesFailure: 'Failed to show all milestones.'
+  showMilestonesFailure: 'Failed to show all milestones.',
+  updateMilestoneSuccess: 'Milestone updated successfully.',
+  updateMilestoneFailure: 'Failed to update milestone.'
 }

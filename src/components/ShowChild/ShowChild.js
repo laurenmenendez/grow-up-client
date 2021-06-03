@@ -79,8 +79,8 @@ class ShowChild extends Component {
                     <Card.Text>
                       {milestone.description}
                     </Card.Text>
-                    { /* <Button size="sm" href={`#children/${milestone.id}/update-child`}>Edit</Button>
-                    <Button size="sm" href={`#children/${milestone.id}/delete-child`}>Delete</Button> */}
+                    <Button size="sm" href={`#children/${id}/milestones/${milestone.id}`}>Edit</Button>
+                    {/* }<Button size="sm" href={`#children/${milestone.id}/delete-child`}>Delete</Button> */}
                   </Card.Body>
                 </Card>
               </div>
