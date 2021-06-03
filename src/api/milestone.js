@@ -46,3 +46,13 @@ export const createMilestone = (milestoneData, user, childId) => {
     }
   })
 }
+
+export const deleteMilestone = (user, childId, id) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + `/children/${childId}/milestones/${id}/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}

@@ -16,6 +16,7 @@ import DeleteChild from './components/DeleteChild/DeleteChild'
 import ShowChild from './components/ShowChild/ShowChild'
 import UpdateMilestone from './components/UpdateMilestone/UpdateMilestone'
 import CreateMilestone from './components/CreateMilestone/CreateMilestone'
+import DeleteMilestone from './components/DeleteMilestone/DeleteMilestone'
 
 class App extends Component {
   constructor (props) {
@@ -155,6 +156,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/milestones/' render={() => (
             <CreateMilestone msgAlert={this.msgAlert} user={user} onCreateMilestoneModalShow={this.onCreateMilestoneModalShow} onCreateMilestoneModalClose={this.onCreateMilestoneModalClose} createMilestoneModal={this.state.createMilestoneModal}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/children/:id/milestones/:milestoneId/delete-milestone' render={() => (
+            <DeleteMilestone msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

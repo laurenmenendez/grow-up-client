@@ -21,5 +21,7 @@ export default {
   updateMilestoneSuccess: 'Milestone updated successfully.',
   updateMilestoneFailure: 'Failed to update milestone.',
   createMilestoneSuccess: 'Milestone added successfully.',
-  createMilestoneFailure: 'Failed to add milestone.'
+  createMilestoneFailure: 'Failed to add milestone.',
+  deleteMilestoneSuccess: 'Milestone deleted successfully.',
+  deleteMilestoneFailure: 'Failed to delete milestone.'
 }

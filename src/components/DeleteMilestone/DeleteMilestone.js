@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
-import { deleteChild } from '../../api/child'
+import { deleteMilestone } from '../../api/milestone'
 
-class DeleteChild extends Component {
+class DeleteMilestone extends Component {
   constructor () {
     super()
 
@@ -14,32 +14,33 @@ class DeleteChild extends Component {
 
   componentDidMount () {
     const { msgAlert, user } = this.props
-    const { id } = this.props.match.params
-    deleteChild(user, id)
+    const { id, milestoneId } = this.props.match.params
+    deleteMilestone(user, id, milestoneId)
       .then(() => {
         this.setState({ delete: true })
         msgAlert({
-          heading: 'Child was successfully deleted!',
-          message: messages.deleteChildSuccess,
+          heading: 'Milestone was successfully deleted!',
+          message: messages.deleteMilestoneSuccess,
           variant: 'success'
         })
       })
       .catch(error => {
         msgAlert({
-          heading: 'Delete child failed with error: ' + error.message,
-          message: messages.deleteChildFailure,
+          heading: 'Delete milestone failed with error: ' + error.message,
+          message: messages.deleteMilestoneFailure,
           variant: 'danger'
         })
       })
   }
 
   render () {
+    const { id } = this.props.match.params
     return (
       <div>
-        {this.state.delete ? <Redirect to="/children" /> : ''}
+        {this.state.delete ? <Redirect to={`/children/${id}/show-child`} /> : ''}
       </div>
     )
   }
 }
 
-export default withRouter(DeleteChild)
+export default withRouter(DeleteMilestone)
