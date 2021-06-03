@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -91,6 +91,7 @@ class SignIn extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {!this.props.signInModal ? <Redirect to="/" /> : ''}
       </div>
     )
   }

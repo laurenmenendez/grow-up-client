@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { createChild } from '../../api/child'
 
@@ -95,6 +95,7 @@ render () {
           </div>
         </Modal.Body>
       </Modal>
+      {!this.props.createChildModal ? <Redirect to="/children" /> : ''}
     </div>
   )
 }

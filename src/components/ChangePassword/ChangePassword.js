@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
 import { changePassword } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -90,6 +90,7 @@ class ChangePassword extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {!this.props.changePasswordModal ? <Redirect to="/children" /> : ''}
       </div>
     )
   }

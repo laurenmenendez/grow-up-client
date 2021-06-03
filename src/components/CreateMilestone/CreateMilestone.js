@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { createMilestone } from '../../api/milestone'
 
@@ -96,6 +96,7 @@ render () {
           </div>
         </Modal.Body>
       </Modal>
+      {!this.props.createMilestoneModal ? <Redirect to="/children" /> : ''}
     </div>
   )
 }

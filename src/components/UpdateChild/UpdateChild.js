@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { updateChild, showChild } from '../../api/child'
 
@@ -103,6 +103,7 @@ class UpdateChild extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {!this.props.updateChildModal ? <Redirect to="/children" /> : ''}
       </div>
     )
   }
