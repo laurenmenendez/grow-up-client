@@ -61,6 +61,7 @@ class UpdateChild extends Component {
   }
   render () {
     const { name, age } = this.state
+    const { id } = this.props.match.params
     return (
       <div>
         <Modal show={this.props.updateChildModal} onHide={this.props.onUpdateChildModalClose}>
@@ -103,7 +104,7 @@ class UpdateChild extends Component {
             </div>
           </Modal.Body>
         </Modal>
-        {!this.props.updateChildModal ? <Redirect to="/children" /> : ''}
+        {!this.props.updateChildModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
       </div>
     )
   }

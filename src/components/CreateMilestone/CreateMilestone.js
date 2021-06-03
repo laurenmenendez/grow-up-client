@@ -53,11 +53,12 @@ handleSubmit = (event) => {
 }
 render () {
   const { title, description } = this.state
+  const { id } = this.props.match.params
   return (
     <div>
       <Modal show={this.props.createMilestoneModal} onHide={this.props.onCreateMilestoneModalClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Child</Modal.Title>
+          <Modal.Title>Add Milestone</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="row">
@@ -96,7 +97,7 @@ render () {
           </div>
         </Modal.Body>
       </Modal>
-      {!this.props.createMilestoneModal ? <Redirect to="/children" /> : ''}
+      {!this.props.createMilestoneModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
     </div>
   )
 }

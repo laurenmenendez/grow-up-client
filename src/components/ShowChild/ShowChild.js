@@ -58,6 +58,9 @@ class ShowChild extends Component {
           variant: 'danger'
         })
       })
+    this.props.onUpdateChildModalShow()
+    this.props.onCreateMilestoneModalShow()
+    this.props.onUpdateMilestoneModalShow()
   }
 
   render () {

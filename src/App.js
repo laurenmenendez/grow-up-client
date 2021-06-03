@@ -126,7 +126,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Lander />
+            <Lander onSignUpModalShow={this.onSignUpModalShow} onSignInModalShow={this.onSignInModalShow}/>
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} onSignUpModalShow={this.onSignUpModalShow} onSignUpModalClose={this.onSignUpModalClose} signUpModal={this.state.signUpModal}/>
@@ -141,7 +141,7 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} onChangePasswordModalShow={this.onChangePasswordModalShow} onChangePasswordModalClose={this.onChangePasswordModalClose} changePasswordModal={this.state.changePasswordModal}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/children' render={() => (
-            <ShowChildren msgAlert={this.msgAlert} user={user} />
+            <ShowChildren msgAlert={this.msgAlert} user={user} onCreateChildModalShow={this.onCreateChildModalShow}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/create-child' render={() => (
             <CreateChild msgAlert={this.msgAlert} user={user} onCreateChildModalShow={this.onCreateChildModalShow} onCreateChildModalClose={this.onCreateChildModalClose} createChildModal={this.state.createChildModal}/>
@@ -153,7 +153,7 @@ class App extends Component {
             <DeleteChild msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/show-child' render={() => (
-            <ShowChild msgAlert={this.msgAlert} user={user} />
+            <ShowChild msgAlert={this.msgAlert} user={user} onUpdateChildModalShow={this.onUpdateChildModalShow} onUpdateMilestoneModalShow={this.onUpdateMilestoneModalShow} onCreateMilestoneModalShow={this.onCreateMilestoneModalShow}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/milestones/:milestoneId' render={() => (
             <UpdateMilestone msgAlert={this.msgAlert} user={user} onUpdateMilestoneModalShow={this.onUpdateMilestoneModalShow} onUpdateMilestoneModalClose={this.onUpdateMilestoneModalClose} updateMilestoneModal={this.state.updateMilestoneModal}/>

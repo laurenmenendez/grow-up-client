@@ -31,6 +31,7 @@ class ShowChildren extends Component {
           variant: 'danger'
         })
       })
+    this.props.onCreateChildModalShow()
   }
 
   render () {

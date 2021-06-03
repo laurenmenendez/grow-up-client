@@ -61,6 +61,7 @@ class UpdateMilestone extends Component {
   }
   render () {
     const { title, description } = this.state
+    const { id } = this.props.match.params
     return (
       <div>
         <Modal show={this.props.updateMilestoneModal} onHide={this.props.onUpdateMilestoneModalClose}>
@@ -103,7 +104,7 @@ class UpdateMilestone extends Component {
             </div>
           </Modal.Body>
         </Modal>
-        {!this.props.updateMilestoneModal ? <Redirect to="/children" /> : ''}
+        {!this.props.updateMilestoneModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
       </div>
     )
   }
