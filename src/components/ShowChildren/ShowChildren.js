@@ -56,7 +56,7 @@ class ShowChildren extends Component {
                       {child.age} years old.
                     </Card.Text>
                     <Button size="sm" href={`#children/${child.id}/update-child`}>Edit</Button>
-                    <Button size="sm">Delete</Button>
+                    <Button size="sm" href={`#children/${child.id}/delete-child`}>Delete</Button>
                     { child.milestones.length > 0 ? <Button size="sm">View milestones</Button> : ''}
                   </Card.Body>
                 </Card>

@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import ShowChildren from './components/ShowChildren/ShowChildren'
 import CreateChild from './components/CreateChild/CreateChild'
 import UpdateChild from './components/UpdateChild/UpdateChild'
+import DeleteChild from './components/DeleteChild/DeleteChild'
 
 class App extends Component {
   constructor (props) {
@@ -121,6 +122,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/update-child' render={() => (
             <UpdateChild msgAlert={this.msgAlert} user={user} onUpdateChildModalShow={this.onUpdateChildModalShow} onUpdateChildModalClose={this.onUpdateChildModalClose} updateChildModal={this.state.updateChildModal}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/children/:id/delete-child' render={() => (
+            <DeleteChild msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

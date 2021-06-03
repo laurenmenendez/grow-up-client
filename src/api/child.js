@@ -49,3 +49,13 @@ export const showChild = (user, id) => {
     }
   })
 }
+
+export const deleteChild = (user, id) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + `/children/${id}/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}

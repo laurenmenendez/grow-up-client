@@ -9,5 +9,9 @@ export default {
   showChildrenSuccess: 'All children shown successfully.',
   showChildrenFailure: 'Failed to show all children.',
   createChildSuccess: 'Child added successfully.',
-  createChildFailure: 'Failed to add child.'
+  createChildFailure: 'Failed to add child.',
+  updateChildSuccess: 'Child updated successfully.',
+  updateChildFailure: 'Failed to update child.',
+  deleteChildSuccess: 'Child deleted successfully.',
+  deleteChildFailure: 'Failed to delete child.'
 }
