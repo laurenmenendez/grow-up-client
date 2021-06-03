@@ -17,6 +17,7 @@ import ShowChild from './components/ShowChild/ShowChild'
 import UpdateMilestone from './components/UpdateMilestone/UpdateMilestone'
 import CreateMilestone from './components/CreateMilestone/CreateMilestone'
 import DeleteMilestone from './components/DeleteMilestone/DeleteMilestone'
+import Lander from './components/Lander/Lander'
 
 class App extends Component {
   constructor (props) {
@@ -124,6 +125,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Lander />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} onSignUpModalShow={this.onSignUpModalShow} onSignUpModalClose={this.onSignUpModalClose} signUpModal={this.state.signUpModal}/>
           )} />
