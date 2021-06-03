@@ -19,5 +19,7 @@ export default {
   showMilestonesSuccess: 'All milestones shown successfully.',
   showMilestonesFailure: 'Failed to show all milestones.',
   updateMilestoneSuccess: 'Milestone updated successfully.',
-  updateMilestoneFailure: 'Failed to update milestone.'
+  updateMilestoneFailure: 'Failed to update milestone.',
+  createMilestoneSuccess: 'Milestone added successfully.',
+  createMilestoneFailure: 'Failed to add milestone.'
 }

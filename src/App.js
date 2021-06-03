@@ -15,6 +15,7 @@ import UpdateChild from './components/UpdateChild/UpdateChild'
 import DeleteChild from './components/DeleteChild/DeleteChild'
 import ShowChild from './components/ShowChild/ShowChild'
 import UpdateMilestone from './components/UpdateMilestone/UpdateMilestone'
+import CreateMilestone from './components/CreateMilestone/CreateMilestone'
 
 class App extends Component {
   constructor (props) {
@@ -27,7 +28,8 @@ class App extends Component {
       changePasswordModal: true,
       createChildModal: true,
       updateChildModal: true,
-      updateMilestoneModal: true
+      updateMilestoneModal: true,
+      createMilestoneModal: true
     }
   }
 
@@ -96,6 +98,14 @@ class App extends Component {
     this.setState({ updateMilestoneModal: false })
   }
 
+  onCreateMilestoneModalShow = () => {
+    this.setState({ createMilestoneModal: true })
+  }
+
+  onCreateMilestoneModalClose = () => {
+    this.setState({ createMilestoneModal: false })
+  }
+
   render () {
     const { msgAlerts, user } = this.state
 
@@ -142,6 +152,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/children/:id/milestones/:milestoneId' render={() => (
             <UpdateMilestone msgAlert={this.msgAlert} user={user} onUpdateMilestoneModalShow={this.onUpdateMilestoneModalShow} onUpdateMilestoneModalClose={this.onUpdateMilestoneModalClose} updateMilestoneModal={this.state.updateMilestoneModal}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/children/:id/milestones/' render={() => (
+            <CreateMilestone msgAlert={this.msgAlert} user={user} onCreateMilestoneModalShow={this.onCreateMilestoneModalShow} onCreateMilestoneModalClose={this.onCreateMilestoneModalClose} createMilestoneModal={this.state.createMilestoneModal}/>
           )} />
         </main>
       </Fragment>

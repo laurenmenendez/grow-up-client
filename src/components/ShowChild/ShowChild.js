@@ -95,7 +95,7 @@ class ShowChild extends Component {
         <Jumbotron>
           <h1>{`All about ${name}`}</h1>
           <p>{`Age ${age}`}</p>
-          <Button className="mr-2" size="sm">Add milestone</Button>
+          <Button className="mr-2" size="sm" href={`#children/${id}/milestones/`}>Add milestone</Button>
           <Button className="mr-2" size="sm" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
           <Button className="mr-2" size="sm" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
         </Jumbotron>

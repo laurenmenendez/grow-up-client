@@ -33,3 +33,16 @@ export const updateMilestone = (milestoneData, user, childId, id) => {
     }
   })
 }
+
+export const createMilestone = (milestoneData, user, childId) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + `/children/${childId}/milestones/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      milestone: milestoneData
+    }
+  })
+}
