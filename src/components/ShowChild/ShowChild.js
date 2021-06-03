@@ -71,7 +71,7 @@ class ShowChild extends Component {
       milestonesJsx = (
         <div className="show-milestones">
           {this.state.milestones.map(milestone => (
-            <div key={milestone.id}>
+            <div key={milestone.id} className="mt-5 mr-5">
               <div className="mt-5">
                 <Card style={{ width: '18rem' }}>
                   <Card.Body>
@@ -95,9 +95,9 @@ class ShowChild extends Component {
         <Jumbotron>
           <h1>{`All about ${name}`}</h1>
           <p>{`Age ${age}`}</p>
-          <Button className="mx-auto" size="sm">Add milestone</Button>
-          <Button className="mx-auto"size="sm" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
-          <Button className="mx-auto"size="sm" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
+          <Button className="mr-2" size="sm">Add milestone</Button>
+          <Button className="mr-2" size="sm" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
+          <Button className="mr-2" size="sm" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
         </Jumbotron>
         <h3>Milestones</h3>
         {milestonesJsx}

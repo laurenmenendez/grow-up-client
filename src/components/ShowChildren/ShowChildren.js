@@ -45,20 +45,18 @@ class ShowChildren extends Component {
       )
     } else {
       childrenJsx = (
-        <div className="show-children">
+        <div className="d-inline-flex">
           {this.state.children.map(child => (
-            <div key={child.id}>
-              <div className="mt-5">
-                <Card style={{ width: '18rem' }}>
-                  <Card.Body>
-                    <Card.Title>{child.name}</Card.Title>
-                    <Card.Text>
-                      {child.age} years old.
-                    </Card.Text>
-                    <Button size="sm" href={`#children/${child.id}/show-child`}>View Details</Button>
-                  </Card.Body>
-                </Card>
-              </div>
+            <div key={child.id} className="mt-5 mr-5">
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>{child.name}</Card.Title>
+                  <Card.Text>
+                    {child.age} years old.
+                  </Card.Text>
+                  <Button size="sm" href={`#children/${child.id}/show-child`}>View Details</Button>
+                </Card.Body>
+              </Card>
             </div>
           ))}
         </div>
