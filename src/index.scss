@@ -1,6 +1,22 @@
+$primary: #85ac33;
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto&display=swap');
+
+$font-family-base: 'Roboto', sans-serif;
+
 @import '~bootstrap/scss/bootstrap';
 
+.navbar, h1 {
+  font-family: 'Indie Flower', cursive !important;
+}
 
-.show-children {
-  display: inline;
+body {
+  background-color: #f9ca46;
+  height: 100%;
+  width: 100%;
+}
+
+.jumbotron {
+  background-color: #3f83a1;
+  color: white;
 }

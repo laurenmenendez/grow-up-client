@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
@@ -112,7 +112,7 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment>
+      <div className="main">
         <Header user={user} />
         {msgAlerts.map(msgAlert => (
           <AutoDismissAlert
@@ -165,7 +165,7 @@ class App extends Component {
             <DeleteMilestone msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
-      </Fragment>
+      </div>
     )
   }
 }

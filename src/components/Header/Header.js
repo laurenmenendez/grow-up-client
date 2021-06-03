@@ -12,7 +12,7 @@ const authenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
+    <Navbar.Brand href={ user ? '#children' : '#' }>
       GrowUp!
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
