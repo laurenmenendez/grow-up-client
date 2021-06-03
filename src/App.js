@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import ShowChildren from './components/ShowChildren/ShowChildren'
+import CreateChild from './components/CreateChild/CreateChild'
 
 class App extends Component {
   constructor (props) {
@@ -19,7 +20,8 @@ class App extends Component {
       msgAlerts: [],
       signUpModal: true,
       signInModal: true,
-      changePasswordModal: true
+      changePasswordModal: true,
+      createChildModal: true
     }
   }
 
@@ -64,6 +66,14 @@ class App extends Component {
     this.setState({ changePasswordModal: false })
   }
 
+  onCreateChildModalShow = () => {
+    this.setState({ createChildModal: true })
+  }
+
+  onCreateChildModalClose = () => {
+    this.setState({ createChildModal: false })
+  }
+
   render () {
     const { msgAlerts, user } = this.state
 
@@ -95,6 +105,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/children' render={() => (
             <ShowChildren msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/create-child' render={() => (
+            <CreateChild msgAlert={this.msgAlert} user={user} onCreateChildModalShow={this.onCreateChildModalShow} onCreateChildModalClose={this.onCreateChildModalClose} createChildModal={this.state.createChildModal}/>
           )} />
         </main>
       </Fragment>

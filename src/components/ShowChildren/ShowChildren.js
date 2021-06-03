@@ -72,6 +72,7 @@ class ShowChildren extends Component {
         <Jumbotron>
           <h1>Watch them grow!</h1>
           <p>Keep all of your children up to date. If you&apos;ve got a new member of the family, add them by clicking the button below!</p>
+          <Button size="lg" href="#create-child">Add child</Button>
         </Jumbotron>
         {childrenJsx}
       </Fragment>

@@ -10,3 +10,19 @@ export const showChildren = user => {
     }
   })
 }
+
+export const createChild = (childData, user) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/children/',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      child: {
+        name: childData.name,
+        age: childData.age
+      }
+    }
+  })
+}

@@ -7,5 +7,7 @@ export default {
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   showChildrenSuccess: 'All children shown successfully.',
-  showChildrenFailure: 'Failed to show all children.'
+  showChildrenFailure: 'Failed to show all children.',
+  createChildSuccess: 'Child added successfully.',
+  createChildFailure: 'Failed to add child.'
 }
