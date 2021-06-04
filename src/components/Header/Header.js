@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 // import { IconContext } from 'react-icons'
 // import { BsPeople } from 'react-icons/bs'
-import favicon from './favicon.ico'
+import favicon from './../../favicons/favicon.ico'
 
 const authenticatedOptions = (
   <Fragment>

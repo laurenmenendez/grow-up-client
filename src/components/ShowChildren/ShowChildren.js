@@ -5,6 +5,8 @@ import { showChildren } from '../../api/child'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import baby from './../../favicons/baby.png'
+import big from './../../favicons/big.png'
 
 class ShowChildren extends Component {
   constructor () {
@@ -53,6 +55,7 @@ class ShowChildren extends Component {
                 <Card.Body>
                   <Card.Title>
                     {child.name}
+                    { child.age < 18 ? <img src={baby} alt="baby" /> : <img src={big} alt="big" /> }
                   </Card.Title>
                   <Card.Text>
                     {child.age} years old.
@@ -69,8 +72,8 @@ class ShowChildren extends Component {
     return (
       <div className="show-children">
         <Jumbotron>
-          <h1>Watch them grow!</h1>
-          <h4>Keep all of your children up to date. If you&apos;ve got a new member of the family, add them by clicking the button below!</h4>
+          <h1 style={{ color: '#FFC107' }}>Watch them grow!</h1>
+          <h4>What&apos;s new with the crew? If you&apos;ve got a new member of the family, add them by clicking the button below!</h4>
           <Button size="lg" href="#create-child">Add child</Button>
         </Jumbotron>
         {childrenJsx}

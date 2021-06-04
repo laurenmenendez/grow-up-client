@@ -88,6 +88,7 @@ body {
 
 .lander-heading {
   text-shadow: $box-shadow;
+  color: #FFC107;
 }
 
 .jumbotron {
@@ -101,4 +102,8 @@ body {
   height: 350px;
   width: 100%;
   padding: 0rem 2rem;
+}
+
+.form {
+  text-align: center;
 }
