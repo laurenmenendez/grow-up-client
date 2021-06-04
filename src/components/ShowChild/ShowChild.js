@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { showChild } from '../../api/child'
@@ -75,16 +75,18 @@ class ShowChild extends Component {
       milestonesJsx = (
         <div className="show-milestones">
           {this.state.milestones.map(milestone => (
-            <div key={milestone.id} className="mt-5 mr-5">
-              <div className="mt-5">
+            <div key={milestone.id}>
+              <div>
                 <Card style={{ width: '18rem' }}>
                   <Card.Body>
                     <Card.Title>{milestone.title}</Card.Title>
                     <Card.Text>
                       {milestone.description}
                     </Card.Text>
-                    <Button size="sm" className="mr-2" href={`#children/${id}/milestones/${milestone.id}`}>Edit</Button>
-                    <Button size="sm" className="mr-2" href={`#children/${id}/milestones/${milestone.id}/delete-milestone`}>Delete</Button>
+                    <div className="btn-milestone">
+                      <Button size="sm" className="mr-2" href={`#children/${id}/milestones/${milestone.id}`}>Edit</Button>
+                      <Button size="sm" className="mr-2" href={`#children/${id}/milestones/${milestone.id}/delete-milestone`}>Delete</Button>
+                    </div>
                   </Card.Body>
                 </Card>
               </div>
@@ -95,17 +97,23 @@ class ShowChild extends Component {
     }
 
     return (
-      <Fragment>
+      <div className="show-children">
         <Jumbotron>
           <h1>{`All about ${name}`}</h1>
-          <p>{`Age ${age}`}</p>
-          <Button className="mr-2" size="sm" href={`#children/${id}/milestones/`}>Add milestone</Button>
-          <Button className="mr-2" size="sm" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
-          <Button className="mr-2" size="sm" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
+          <h4>{`Age ${age}`}</h4>
+          <div className="btn-auth">
+            <Button size="lg" className="mr-2" href={`#children/${id}/milestones/`}>Add milestone</Button>
+            <Button size="lg" className="mr-2" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
+            <Button size="lg" className="mr-2" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
+          </div>
         </Jumbotron>
-        <h3><Badge variant="secondary">Milestones</Badge></h3>
+        <h3>
+          <Badge variant="secondary">
+            Milestones
+          </Badge>
+        </h3>
         {milestonesJsx}
-      </Fragment>
+      </div>
     )
   }
 }

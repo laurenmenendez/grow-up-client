@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import { showChildren } from '../../api/child'
@@ -46,12 +46,14 @@ class ShowChildren extends Component {
       )
     } else {
       childrenJsx = (
-        <div className="d-inline-flex">
+        <div className="show-children-cards">
           {this.state.children.map(child => (
-            <div key={child.id} className="mt-5 mr-5">
-              <Card style={{ width: '18rem' }} border="red">
+            <div key={child.id}>
+              <Card style={{ width: '18rem' }} >
                 <Card.Body>
-                  <Card.Title>{child.name}</Card.Title>
+                  <Card.Title>
+                    {child.name}
+                  </Card.Title>
                   <Card.Text>
                     {child.age} years old.
                   </Card.Text>
@@ -65,14 +67,14 @@ class ShowChildren extends Component {
     }
 
     return (
-      <Fragment>
+      <div className="show-children">
         <Jumbotron>
           <h1>Watch them grow!</h1>
-          <p>Keep all of your children up to date. If you&apos;ve got a new member of the family, add them by clicking the button below!</p>
+          <h4>Keep all of your children up to date. If you&apos;ve got a new member of the family, add them by clicking the button below!</h4>
           <Button size="lg" href="#create-child">Add child</Button>
         </Jumbotron>
         {childrenJsx}
-      </Fragment>
+      </div>
     )
   }
 }

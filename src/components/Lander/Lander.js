@@ -20,10 +20,12 @@ class Lander extends Component {
     return (
       <Fragment>
         <Jumbotron>
-          <h1>Welcome to GrowUp!</h1>
-          <p>Sign up or sign in to get started.</p>
-          <Button className="mr-2" size="lg" href='#sign-up'>Sign up</Button>
-          <Button className="mr-2" size="lg" href='#sign-in'>Sign in</Button>
+          <h1 className="lander-heading">Welcome to GrowUp!</h1>
+          <h4>The best place to record your child&apos;s special moments - privately.</h4>
+          <div className='btn-auth'>
+            <Button className="mr-2" size="lg" href='#sign-up'>Sign up</Button>
+            <Button className="mr-2" size="lg" href='#sign-in'>Sign in</Button>
+          </div>
         </Jumbotron>
       </Fragment>
     )

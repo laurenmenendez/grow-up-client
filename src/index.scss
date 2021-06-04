@@ -1,9 +1,8 @@
 
 $primary: #85ac33;
 $secondary: #3f83a1;
-$danger: #e84234;
 
-$body-bg: #f9ca46;
+$body-bg: #FFCA28;
 $body-color: #3f83a1;
 $btn-font-family: 'Roboto', sans-serif;
 $border-width: 3px;
@@ -13,7 +12,6 @@ $modal-content-border-color: $primary;
 $jumbotron-color: white;
 $jumbotron-bg: $secondary;
 $badge-padding-x: 1.5em;
-
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto&display=swap');
 
@@ -26,26 +24,81 @@ $font-family-base: 'Roboto', sans-serif;
   // text-shadow:
 }
 
-body {
-  height: 100%;
+.show-children-cards, .show-milestones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   width: 100%;
-  align-content: center;
-  text-align: center;
 }
 
-.jumbotron {
-  box-shadow: $box-shadow;
-  text-align: center;
+.show-children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  text-shadow: $box-shadow;
+// // //   height: 100%;
+// // //   width: 100%;
+// //   display: flex;
+// //   flex-direction: column;
+// // //   // justify-content: center;
+// // //   align-content: center;
+// //   justify-content: space-evenly;
+// // //   text-align: center;
 }
 
 .card {
   box-shadow: $box-shadow;
   text-align: center;
+  margin: 5px 0px;
   display: flex;
-  align-self: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
   box-shadow: $box-shadow;
-  align-self: flex-start;
+  // align-self: flex-start;
+}
+
+.btn-auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-milestone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.badge {
+  text-align: center;
+  display: block;
+  align-items: center;
+  border: 2px solid $primary;
+  box-shadow: $box-shadow;
+  margin-bottom: 15px;
+}
+
+.lander-heading {
+  text-shadow: $box-shadow;
+}
+
+.jumbotron {
+  box-shadow: $box-shadow;
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 350px;
+  width: 100%;
+  padding: 0rem 2rem;
 }

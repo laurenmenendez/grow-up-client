@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+// import { IconContext } from 'react-icons'
+// import { BsPeople } from 'react-icons/bs'
+import favicon from './favicon.ico'
 
 const authenticatedOptions = (
   <Fragment>
@@ -13,7 +16,7 @@ const authenticatedOptions = (
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href={ user ? '#children' : '#' }>
-      GrowUp!
+      <img src={favicon} alt="favicon" />
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
