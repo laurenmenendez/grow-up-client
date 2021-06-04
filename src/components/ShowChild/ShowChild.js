@@ -107,11 +107,11 @@ class ShowChild extends Component {
             <Button size="lg" className="mr-2" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
           </div>
         </Jumbotron>
-        { !this.state.milestones.length === 0 ? <h3>
+        { this.state.milestones.length === 0 ? '' : <h3>
           <Badge variant="secondary">
             Milestones
           </Badge>
-        </h3> : '' }
+        </h3> }
         {milestonesJsx}
       </div>
     )
