@@ -38,13 +38,17 @@ class ShowChildren extends Component {
 
   render () {
     let childrenJsx = ''
+    let jumboMsgJsx = ''
     if (this.state.children === null) {
       childrenJsx = (
         <p>Loading...</p>
       )
+      jumboMsgJsx = (
+        <p>Loading...</p>
+      )
     } else if (this.state.children.length === 0) {
-      childrenJsx = (
-        <p>You don&apos;t have any children yet!</p>
+      jumboMsgJsx = (
+        <h4>You don&apos;t have any children yet! Start adding by clicking the button below.</h4>
       )
     } else {
       childrenJsx = (
@@ -67,13 +71,16 @@ class ShowChildren extends Component {
           ))}
         </div>
       )
+      jumboMsgJsx = (
+        <h4>What&apos;s new with the crew? If you&apos;ve got a new member of the family, add them by clicking the button below!</h4>
+      )
     }
 
     return (
       <div className="show-children">
         <Jumbotron>
           <h1 style={{ color: '#FFC107' }}>Watch them grow!</h1>
-          <h4>What&apos;s new with the crew? If you&apos;ve got a new member of the family, add them by clicking the button below!</h4>
+          {jumboMsgJsx}
           <Button size="lg" href="#create-child">Add child</Button>
         </Jumbotron>
         {childrenJsx}

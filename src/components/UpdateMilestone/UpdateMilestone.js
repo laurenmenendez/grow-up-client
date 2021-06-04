@@ -66,12 +66,11 @@ class UpdateMilestone extends Component {
       <div>
         <Modal show={this.props.updateMilestoneModal} onHide={this.props.onUpdateMilestoneModalClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Update Milestone</Modal.Title>
+            <Modal.Title>Edit Milestone</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="row">
               <div className="col-sm-10 col-md-8 mx-auto mt-5">
-                <h4>Enter only the information you&apos;d like to update on this milestone</h4>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group controlId="title">
                     <Form.Label>Title</Form.Label>

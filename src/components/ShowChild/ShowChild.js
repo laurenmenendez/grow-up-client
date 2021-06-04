@@ -45,11 +45,6 @@ class ShowChild extends Component {
     showMilestones(user, id)
       .then(res => {
         this.setState({ milestones: res.data.milestones })
-        msgAlert({
-          heading: 'Show all milestones success',
-          message: messages.showMilestoneSuccess,
-          variant: 'success'
-        })
       })
       .catch(error => {
         this.setState({ milestones: '' })
@@ -69,7 +64,7 @@ class ShowChild extends Component {
     let milestonesJsx = ''
     if (this.state.milestones.length === 0) {
       milestonesJsx = (
-        <p>{name} has no milestones yet! Start adding by clicking the button above.</p>
+        <h4>{name} has no milestones yet! Start adding by clicking the button above.</h4>
       )
     } else {
       milestonesJsx = (
