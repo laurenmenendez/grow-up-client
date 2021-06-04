@@ -1,4 +1,19 @@
+
 $primary: #85ac33;
+$secondary: #3f83a1;
+$danger: #e84234;
+
+$body-bg: #f9ca46;
+$body-color: #3f83a1;
+$btn-font-family: 'Roboto', sans-serif;
+$border-width: 3px;
+$card-border-color: $primary;
+$card-color: $secondary;
+$modal-content-border-color: $primary;
+$jumbotron-color: white;
+$jumbotron-bg: $secondary;
+$badge-padding-x: 1.5em;
+
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto&display=swap');
 
@@ -8,19 +23,29 @@ $font-family-base: 'Roboto', sans-serif;
 
 .navbar, h1 {
   font-family: 'Indie Flower', cursive !important;
+  // text-shadow:
 }
 
 body {
-  background-color: #f9ca46;
   height: 100%;
   width: 100%;
+  align-content: center;
+  text-align: center;
 }
 
 .jumbotron {
-  background-color: #3f83a1;
-  color: white;
+  box-shadow: $box-shadow;
+  text-align: center;
 }
 
 .card {
-  color: #3f83a1
+  box-shadow: $box-shadow;
+  text-align: center;
+  display: flex;
+  align-self: inline-flex;
+}
+
+.btn {
+  box-shadow: $box-shadow;
+  align-self: flex-start;
 }

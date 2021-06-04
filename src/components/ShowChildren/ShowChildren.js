@@ -49,7 +49,7 @@ class ShowChildren extends Component {
         <div className="d-inline-flex">
           {this.state.children.map(child => (
             <div key={child.id} className="mt-5 mr-5">
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' }} border="red">
                 <Card.Body>
                   <Card.Title>{child.name}</Card.Title>
                   <Card.Text>

@@ -6,6 +6,7 @@ import { showMilestones } from '../../api/milestone'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Badge from 'react-bootstrap/Badge'
 
 class ShowChild extends Component {
   constructor () {
@@ -102,7 +103,7 @@ class ShowChild extends Component {
           <Button className="mr-2" size="sm" href={`#children/${id}/update-child`}>{`Edit ${name}`}</Button>
           <Button className="mr-2" size="sm" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
         </Jumbotron>
-        <h3>Milestones</h3>
+        <h3><Badge variant="secondary">Milestones</Badge></h3>
         {milestonesJsx}
       </Fragment>
     )
