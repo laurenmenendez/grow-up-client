@@ -91,6 +91,7 @@ class SignIn extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {/* Redirects to home page if modal is closed to prevent empty screen */}
         {!this.props.signInModal ? <Redirect to="/" /> : ''}
       </div>
     )

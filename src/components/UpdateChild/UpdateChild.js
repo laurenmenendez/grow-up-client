@@ -21,7 +21,10 @@ class UpdateChild extends Component {
 
   componentDidMount () {
     this.props.onUpdateChildModalShow()
-    /* get show request for this child to populate state with old info */
+    // get show request for this child to populate
+    // state with old info first. only attributes updated by user
+    // will be updated in state, but cannot send empty fields to API
+    // so populating them with old info
     const { user } = this.props
     const { id } = this.props.match.params
     showChild(user, id)
@@ -104,6 +107,7 @@ class UpdateChild extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {/* Redirects to children page if modal is closed to prevent empty screen */}
         {!this.props.updateChildModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
       </div>
     )

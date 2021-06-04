@@ -41,7 +41,7 @@ class ShowChild extends Component {
           variant: 'danger'
         })
       })
-    /* show all milestones request */
+    // show all milestones request so that we can access the array later to map through it and generate the cards
     showMilestones(user, id)
       .then(res => {
         this.setState({ milestones: res.data.milestones })
@@ -54,12 +54,14 @@ class ShowChild extends Component {
           variant: 'danger'
         })
       })
+    // sets modal states back to true so that modals can be opened again after closing out and being redirected back to this page
     this.props.onUpdateChildModalShow()
     this.props.onCreateMilestoneModalShow()
     this.props.onUpdateMilestoneModalShow()
   }
 
   render () {
+    // below sets content below jumbotron based on whether child has any milestones or not
     const { name, id, age } = this.state.child
     let milestonesJsx = ''
     if (this.state.milestones.length === 0) {
@@ -67,6 +69,7 @@ class ShowChild extends Component {
         <h4>{name} has no milestones yet! Start adding by clicking the button above.</h4>
       )
     } else {
+      // maps through milestones and generates cards for each
       milestonesJsx = (
         <div className="show-milestones">
           {this.state.milestones.map(milestone => (
@@ -102,6 +105,7 @@ class ShowChild extends Component {
             <Button size="lg" className="mr-2" href={`#children/${id}/delete-child`}>{`Delete ${name}`}</Button>
           </div>
         </Jumbotron>
+        {/* if there are no milestones, will not display "milestones" badge heading */}
         { this.state.milestones.length === 0 ? '' : <h3>
           <Badge variant="secondary">
             Milestones

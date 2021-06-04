@@ -21,7 +21,10 @@ class UpdateMilestone extends Component {
 
   componentDidMount () {
     this.props.onUpdateMilestoneModalShow()
-    /* get show request for this milestone to populate state with old info */
+    // get show request for this milestone to populate
+    // state with old info first. only attributes updated by user
+    // will be updated in state, but cannot send empty fields to API
+    // so populating them with old info
     const { user } = this.props
     const { id, milestoneId } = this.props.match.params
     showMilestone(user, id, milestoneId)
@@ -103,6 +106,7 @@ class UpdateMilestone extends Component {
             </div>
           </Modal.Body>
         </Modal>
+        {/* Redirects to child page if modal is closed to prevent empty screen */}
         {!this.props.updateMilestoneModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
       </div>
     )

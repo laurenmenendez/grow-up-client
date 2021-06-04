@@ -97,6 +97,7 @@ render () {
           </div>
         </Modal.Body>
       </Modal>
+      {/* Redirects to child page if modal is closed to prevent empty screen */}
       {!this.props.createMilestoneModal ? <Redirect to={`/children/${id}/show-child`} /> : ''}
     </div>
   )

@@ -23,6 +23,7 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      // modal states stored here and passed down as props to components
       user: null,
       msgAlerts: [],
       signUpModal: true,
@@ -52,6 +53,7 @@ class App extends Component {
     })
   }
 
+  // modal functions stored here, they change the state of each modal to enable opening/closing them. Passed down to components as props
   onSignUpModalShow = () => {
     this.setState({ signUpModal: true })
   }

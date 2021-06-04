@@ -23,7 +23,6 @@ class ShowChildren extends Component {
     showChildren(user)
       .then(res => {
         this.setState({ children: res.data.children })
-        console.log(this.state.children)
       })
       .catch(error => {
         this.setState({ children: null })
@@ -33,10 +32,12 @@ class ShowChildren extends Component {
           variant: 'danger'
         })
       })
+    // sets modal state back to true so that modal can be opened again after closing out and being redirected back to this page
     this.props.onCreateChildModalShow()
   }
 
   render () {
+    // below vars and if block sets content for jumbotron and below it based on whether user has any children or not
     let childrenJsx = ''
     let jumboMsgJsx = ''
     if (this.state.children === null) {
@@ -51,6 +52,7 @@ class ShowChildren extends Component {
         <h4>You don&apos;t have any children yet! Start adding by clicking the button below.</h4>
       )
     } else {
+      // map through children array in state to generate card components for each child
       childrenJsx = (
         <div className="show-children-cards">
           {this.state.children.map(child => (
@@ -59,6 +61,7 @@ class ShowChildren extends Component {
                 <Card.Body>
                   <Card.Title>
                     {child.name}
+                    {/* // renders bird icon based on child age */}
                     { child.age < 18 ? <img src={baby} alt="baby" /> : <img src={big} alt="big" /> }
                   </Card.Title>
                   <Card.Text>

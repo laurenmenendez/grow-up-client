@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import { withRouter } from 'react-router-dom'
 
+// this component renders pre-auth content for the app
 class Lander extends Component {
   constructor () {
     super()

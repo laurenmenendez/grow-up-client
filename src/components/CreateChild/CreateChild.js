@@ -95,6 +95,7 @@ render () {
           </div>
         </Modal.Body>
       </Modal>
+      {/* Redirects to children page if modal is closed to prevent empty screen */}
       {!this.props.createChildModal ? <Redirect to="/children" /> : ''}
     </div>
   )
